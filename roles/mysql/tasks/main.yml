@@ -1,0 +1,41 @@
+---
+- name: Atualizar o cache do apt
+  apt:
+    update_cache: yes
+  become: yes
+
+- name: Instalar pacotes necessários
+  apt:
+    name:
+      - python3-pip
+      - python3-pymysql
+    state: present
+  become: yes
+
+- name: Instalar mysqlclient e configparser
+  pip:
+    name: 
+      - configparser
+  become: yes
+
+- name: Instalar MySQL Server
+  apt:
+    name: mysql-server
+    state: present
+  become: yes
+
+- name: Definir senha do root do MySQL
+  mysql_user:
+    name: root
+    host: localhost
+    password: "{{ mysql_root_password }}"
+    login_unix_socket: /var/run/mysqld/mysqld.sock
+    state: present
+  become: yes
+
+- name: Garantir que o serviço MySQL está em execução
+  service:
+    name: mysql
+    state: started
+    enabled: yes
+  become: yes
