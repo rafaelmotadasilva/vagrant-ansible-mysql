@@ -43,6 +43,10 @@ vagrant up
 
 Isso criará e iniciará a máquina virtual e aplicará a configuração do Ansible.
 
+## Estrutura do Projeto
+
+Certifique-se de que seu projeto tenha a seguinte estrutura:
+
 ```
 .
 ├── playbook.yml
