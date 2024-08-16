@@ -1,7 +1,6 @@
 <h1>
-    <a href="https://www.dio.me/">
-     <img align="center" width="40px" src="https://www.ansible.com/images/project-logos/ansible-core.svg"></a>
-    <span> Criando uma role do MySQL no Ansible</span>
+    <img align="center" width="40px" src="https://www.ansible.com/images/project-logos/ansible-core.svg" alt="Ansible logo">
+    <span>Criando uma role do MySQL no Ansible</span>
 </h1>
 
 Repositório desenvolvido para fins educativos.
